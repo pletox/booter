@@ -1,10 +1,10 @@
 {
-    "name": "froiden/envato",
-    "description": "Package for checking licencnse key and update for envato project.",
+    "name": "pletox/booter",
+    "description": "Package for checking licencnse key and update for Pletox project.",
     "authors": [
         {
-            "name": "Rajesh Kumawat",
-            "email": "rajesh@froiden.com"
+            "name": "Abhishek Wani",
+            "email": "contact@pletox.com"
         }
     ],
     "require-dev": {
