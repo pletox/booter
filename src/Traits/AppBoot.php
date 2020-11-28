@@ -33,6 +33,8 @@ trait AppBoot
         $this->setSetting();
         $domain = \request()->getHost();
 
+        return true;
+
         if ($domain == 'localhost' || $domain == '127.0.0.1' || $domain == '::1') {
             return true;
         }

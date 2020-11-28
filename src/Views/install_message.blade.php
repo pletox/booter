@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <title>{{ ucwords(config('froiden_envato.envato_product_name'))}} Not installed</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -85,41 +86,43 @@ if (function_exists('apache_get_modules')) {
 ?>
 
 <body>
-<!-- Page Content -->
-<div class="container">
-    <div class="row" style="margin-top: 30px">
-        <div class="text-center m-t-20 mt-20">
-            <img class="text-center" src="{{ asset('worksuite-logo.png') }}" style="max-width: 240px" alt="Home"/>
-        </div>
-        <div class="bs-example" data-example-id="alerts-with-links" style="margin-top:10px ">
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row" style="margin-top: 30px">
+            <div class="text-center m-t-20 mt-20">
+                {{-- <img class="text-center" src="{{ asset('worksuite-logo.png') }}" style="max-width: 240px"
+                alt="Home"/> --}}
+                <h2 class="font-weight-bold">Pletox Boot</h2>
+            </div>
+            <div class="bs-example" data-example-id="alerts-with-links" style="margin-top:10px ">
 
 
-            <div class="alert alert-warning" role="alert"><strong>{{ ucwords(config('froiden_envato.envato_product_name'))}} not installed!</strong> Visit <a
-                    href="{{ url('/install')}}"
-                    class="alert-link">{{ url('/install')}}</a>
-                to get the installer.
+                <div class="alert alert-warning" role="alert">
+                    <strong>{{ ucwords(config('froiden_envato.envato_product_name'))}} not installed!</strong> Visit <a
+                        href="{{ url('/install')}}" class="alert-link">{{ url('/install')}}</a>
+                    to get the installer.
+                </div>
+
             </div>
 
-        </div>
 
-
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Server Requirements.
-                    @if (version_compare(PHP_VERSION, '7.1.3') > 0)
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Server Requirements.
+                        @if (version_compare(PHP_VERSION, '7.1.3') > 0)
                         <span class="pull-right">Current PHP Version: {{ phpversion() }} <i
                                 class="fa fa fa-check-circle text-success"></i></span>
-                    @else
+                        @else
                         <span class="pull-right">Current PHP Version: {{ phpversion() }} <i data-toggle="tooltip"
-                                                                                            data-original-title="PHP Update Required"
-                                                                                            class="fa fa fa-warning text-danger"></i></span>
-                    @endif</h3>
-            </div>
-            <div class="panel-body">
-                <div class="wrapper">
+                                data-original-title="PHP Update Required"
+                                class="fa fa fa-warning text-danger"></i></span>
+                        @endif</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="wrapper">
 
-                    <p>
-                        PHP <?php
+                        <p>
+                            PHP <?php
 
                         if (is_array($reqList[$laravelVersion]['php'])) {
                             $phpVersions = array();
@@ -132,54 +135,57 @@ if (function_exists('apache_get_modules')) {
                         }
 
                         echo " " . ($requirements['php_version'] ? $strOk : $strFail); ?>
-                    </p>
+                        </p>
 
 
-                    <?php if ($reqList[$laravelVersion]['openssl']) : ?>
-                    <p>OpenSSL PHP Extension <?php echo $requirements['openssl_enabled'] ? $strOk : $strFail; ?></p>
-                    <?php endif; ?>
+                        <?php if ($reqList[$laravelVersion]['openssl']) : ?>
+                        <p>OpenSSL PHP Extension <?php echo $requirements['openssl_enabled'] ? $strOk : $strFail; ?></p>
+                        <?php endif; ?>
 
-                    <?php if ($reqList[$laravelVersion]['pdo']) : ?>
-                    <p>PDO PHP Extension <?php echo $requirements['pdo_enabled'] ? $strOk : $strFail; ?></p>
-                    <?php endif ?>
+                        <?php if ($reqList[$laravelVersion]['pdo']) : ?>
+                        <p>PDO PHP Extension <?php echo $requirements['pdo_enabled'] ? $strOk : $strFail; ?></p>
+                        <?php endif ?>
 
-                    <?php if ($reqList[$laravelVersion]['mbstring']) : ?>
-                    <p>Mbstring PHP Extension <?php echo $requirements['mbstring_enabled'] ? $strOk : $strFail; ?></p>
-                    <?php endif ?>
+                        <?php if ($reqList[$laravelVersion]['mbstring']) : ?>
+                        <p>Mbstring PHP Extension <?php echo $requirements['mbstring_enabled'] ? $strOk : $strFail; ?>
+                        </p>
+                        <?php endif ?>
 
-                    <?php if ($reqList[$laravelVersion]['tokenizer']) : ?>
-                    <p>Tokenizer PHP Extension <?php echo $requirements['tokenizer_enabled'] ? $strOk : $strFail; ?></p>
-                    <?php endif ?>
+                        <?php if ($reqList[$laravelVersion]['tokenizer']) : ?>
+                        <p>Tokenizer PHP Extension <?php echo $requirements['tokenizer_enabled'] ? $strOk : $strFail; ?>
+                        </p>
+                        <?php endif ?>
 
 
-                    <?php if ($reqList[$laravelVersion]['xml']) : ?>
-                    <p>XML PHP Extension <?php echo $requirements['xml_enabled'] ? $strOk : $strFail; ?></p>
-                    <?php endif ?>
+                        <?php if ($reqList[$laravelVersion]['xml']) : ?>
+                        <p>XML PHP Extension <?php echo $requirements['xml_enabled'] ? $strOk : $strFail; ?></p>
+                        <?php endif ?>
 
-                    <?php if ($reqList[$laravelVersion]['ctype']) : ?>
-                    <p>CTYPE PHP Extension <?php echo $requirements['ctype_enabled'] ? $strOk : $strFail; ?></p>
-                    <?php endif ?>
+                        <?php if ($reqList[$laravelVersion]['ctype']) : ?>
+                        <p>CTYPE PHP Extension <?php echo $requirements['ctype_enabled'] ? $strOk : $strFail; ?></p>
+                        <?php endif ?>
 
-                    <?php if ($reqList[$laravelVersion]['json']) : ?>
-                    <p>JSON PHP Extension <?php echo $requirements['json_enabled'] ? $strOk : $strFail; ?></p>
-                    <?php endif ?>
+                        <?php if ($reqList[$laravelVersion]['json']) : ?>
+                        <p>JSON PHP Extension <?php echo $requirements['json_enabled'] ? $strOk : $strFail; ?></p>
+                        <?php endif ?>
 
-                    <?php if ($reqList[$laravelVersion]['mcrypt']) : ?>
-                    <p>Mcrypt PHP Extension <?php echo $requirements['mcrypt_enabled'] ? $strOk : $strFail; ?></p>
-                    <?php endif ?>
+                        <?php if ($reqList[$laravelVersion]['mcrypt']) : ?>
+                        <p>Mcrypt PHP Extension <?php echo $requirements['mcrypt_enabled'] ? $strOk : $strFail; ?></p>
+                        <?php endif ?>
 
-                    <?php if (!empty($reqList[$laravelVersion]['obs'])): ?>
-                    <p class="obs"><?php echo $reqList[$laravelVersion]['obs'] ?></p>
-                    <?php endif; ?>
+                        <?php if (!empty($reqList[$laravelVersion]['obs'])): ?>
+                        <p class="obs"><?php echo $reqList[$laravelVersion]['obs'] ?></p>
+                        <?php endif; ?>
 
+                    </div>
                 </div>
             </div>
+
         </div>
-
     </div>
-</div>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </body>
+
 </html>

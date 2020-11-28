@@ -1,12 +1,12 @@
 <?php
 // Updates folder
-$product = 'worksuite';
+$product = 'Pleotox';
 
 // Envato id
 $envato_item_id = 20052522;
 
-// Product Url from codecanyon
-$productUrl = 'https://codecanyon.net/item/worksuite-project-management-system/20052522?ref=ajay138';
+// Product Url
+$productUrl = 'https://pletox.com';
 
 $updatesDomain = '';
 
