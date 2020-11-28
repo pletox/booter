@@ -15,7 +15,6 @@
             "Froiden\\Envato\\": "src/"
         }
     },
-    "minimum-stability": "dev",
     "require": {},
     "extra": {
         "laravel": {
